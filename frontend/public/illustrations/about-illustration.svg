@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="aboutGrad" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#182235"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" rx="20" fill="url(#aboutGrad)"/>
+
+  <!-- Shield and Data Nodes -->
+  <g transform="translate(180, 50)">
+    <!-- Central Shield -->
+    <path d="M 120 40 Q 180 30 240 40 Q 240 160 120 220 Q 0 160 0 40 Z" fill="#7567F8" fill-opacity="0.12" stroke="#7567F8" stroke-width="2"/>
+    <path d="M 120 60 Q 170 52 215 60 Q 215 150 120 195 Q 25 150 25 60 Z" fill="#06B6D4" fill-opacity="0.1" stroke="#06B6D4" stroke-width="1.5" stroke-dasharray="4 4"/>
+    
+    <!-- Central Checkmark / Verified Symbol -->
+    <circle cx="120" cy="115" r="32" fill="#7567F8"/>
+    <path d="M 108 116 L 116 124 L 134 106" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Orbiting Evidence Badges -->
+    <g transform="translate(-80, 70)">
+      <rect width="100" height="32" rx="8" fill="#090D18" stroke="#273449" stroke-width="1"/>
+      <text x="12" y="20" fill="#10B981" font-family="system-ui" font-size="10" font-weight="700">✓ SSRF PROTECTED</text>
+    </g>
+
+    <g transform="translate(220, 70)">
+      <rect width="110" height="32" rx="8" fill="#090D18" stroke="#273449" stroke-width="1"/>
+      <text x="12" y="20" fill="#06B6D4" font-family="system-ui" font-size="10" font-weight="700">✓ ZERO HALLUCINATIONS</text>
+    </g>
+
+    <g transform="translate(70, 240)">
+      <rect width="100" height="32" rx="8" fill="#090D18" stroke="#273449" stroke-width="1"/>
+      <text x="14" y="20" fill="#F59E0B" font-family="system-ui" font-size="10" font-weight="700">✓ CWE-1236 SAFE</text>
+    </g>
+  </g>
+</svg>
+

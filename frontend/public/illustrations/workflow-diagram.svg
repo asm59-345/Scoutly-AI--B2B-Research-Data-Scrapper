@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="wfBg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E1322"/>
+      <stop offset="100%" stop-color="#141C30"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7567F8"/>
+      <stop offset="100%" stop-color="#5B48F6"/>
+    </linearGradient>
+    <filter id="nodeShadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" rx="24" fill="url(#wfBg)"/>
+
+  <!-- Connecting Curved Circuit Path -->
+  <path d="M 160 250 C 260 140, 360 140, 400 250 C 440 360, 540 360, 640 250" stroke="#7567F8" stroke-width="3" stroke-dasharray="6 8" opacity="0.6"/>
+  <path d="M 160 250 C 260 140, 360 140, 400 250 C 440 360, 540 360, 640 250" stroke="#06B6D4" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Node 1: Intent Input -->
+  <g filter="url(#nodeShadow)">
+    <rect x="70" y="190" width="180" height="120" rx="16" fill="#111827" stroke="#273449" stroke-width="1.5"/>
+    <circle cx="110" cy="225" r="16" fill="#7567F8" fill-opacity="0.2"/>
+    <circle cx="110" cy="225" r="7" fill="#7567F8"/>
+    <text x="135" y="222" fill="#7567F8" font-family="system-ui, sans-serif" font-size="10" font-weight="800">STAGE 01</text>
+    <text x="135" y="238" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Intent Parsing</text>
+    <text x="86" y="270" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">Natural language input</text>
+    <text x="86" y="286" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">mapped to taxonomy</text>
+  </g>
+
+  <!-- Node 2: Discovery & Scrape -->
+  <g filter="url(#nodeShadow)">
+    <rect x="310" y="190" width="180" height="120" rx="16" fill="#111827" stroke="#7567F8" stroke-width="1.5"/>
+    <circle cx="350" cy="225" r="16" fill="#06B6D4" fill-opacity="0.2"/>
+    <circle cx="350" cy="225" r="7" fill="#06B6D4"/>
+    <text x="375" y="222" fill="#06B6D4" font-family="system-ui, sans-serif" font-size="10" font-weight="800">STAGE 02</text>
+    <text x="375" y="238" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Web Automation</text>
+    <text x="326" y="270" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">Autonomous crawler</text>
+    <text x="326" y="286" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">identifies place records</text>
+  </g>
+
+  <!-- Node 3: Deep Enrichment -->
+  <g filter="url(#nodeShadow)">
+    <rect x="550" y="190" width="180" height="120" rx="16" fill="#111827" stroke="#273449" stroke-width="1.5"/>
+    <circle cx="590" cy="225" r="16" fill="#10B981" fill-opacity="0.2"/>
+    <circle cx="590" cy="225" r="7" fill="#10B981"/>
+    <text x="615" y="222" fill="#10B981" font-family="system-ui, sans-serif" font-size="10" font-weight="800">STAGE 03</text>
+    <text x="615" y="238" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Enriched Export</text>
+    <text x="566" y="270" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">Validated emails, phones</text>
+    <text x="566" y="286" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">& Excel/CSV workbooks</text>
+  </g>
+
+  <!-- Flow Direction Arrows -->
+  <polygon points="275,230 285,225 275,220" fill="#7567F8"/>
+  <polygon points="515,270 525,275 515,280" fill="#06B6D4"/>
+</svg>
+

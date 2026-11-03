@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E1322"/>
+      <stop offset="100%" stop-color="#141C30"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7567F8"/>
+      <stop offset="100%" stop-color="#5B48F6"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7567F8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7567F8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="600" rx="32" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid Lines -->
+  <g opacity="0.08" stroke="#FFFFFF" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="700" y1="0" x2="700" y2="600"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+  </g>
+
+  <!-- Ambient Light Sphere -->
+  <circle cx="400" cy="240" r="180" fill="url(#glowGrad)"/>
+
+  <!-- Radar Conic Network Scanning Map -->
+  <g opacity="0.6">
+    <circle cx="400" cy="280" r="140" stroke="#7567F8" stroke-width="1" stroke-dasharray="4 6"/>
+    <circle cx="400" cy="280" r="90" stroke="#06B6D4" stroke-width="1.2" stroke-opacity="0.5"/>
+    <circle cx="400" cy="280" r="40" stroke="#7567F8" stroke-width="1" stroke-opacity="0.7"/>
+    <!-- Radar Sweep Ray -->
+    <path d="M400 280 L520 180" stroke="url(#cyanGrad)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="520" cy="180" r="6" fill="#06B6D4"/>
+    <circle cx="520" cy="180" r="12" stroke="#06B6D4" stroke-width="1.5" stroke-opacity="0.5"/>
+  </g>
+
+  <!-- Central Intelligence Terminal Card -->
+  <g filter="url(#softShadow)">
+    <rect x="120" y="110" width="560" height="380" rx="20" fill="#111827" stroke="#273449" stroke-width="1.5"/>
+    
+    <!-- Window Bar -->
+    <rect x="120" y="110" width="560" height="42" rx="20" fill="#182235"/>
+    <circle cx="150" cy="131" r="5" fill="#EF4444"/>
+    <circle cx="168" cy="131" r="5" fill="#F59E0B"/>
+    <circle cx="186" cy="131" r="5" fill="#10B981"/>
+    <text x="215" y="135" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="0.5">SCOUTLY AI · PROSPECTING ENGINE RUNNER</text>
+    
+    <!-- Search Query Bar in Mockup -->
+    <rect x="150" y="172" width="500" height="44" rx="12" fill="#0E1524" stroke="#273449" stroke-width="1"/>
+    <circle cx="174" cy="194" r="7" stroke="#7567F8" stroke-width="2"/>
+    <line x1="179" y1="199" x2="187" y2="207" stroke="#7567F8" stroke-width="2" stroke-linecap="round"/>
+    <text x="200" y="198" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="12" font-weight="500">"Find top software companies and tech startups in Lucknow with contact details"</text>
+    <rect x="580" y="178" width="62" height="32" rx="8" fill="url(#purpleGrad)"/>
+    <text x="597" y="198" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="700">PARSED</text>
+
+    <!-- Discovered Lead Item 1 -->
+    <rect x="150" y="234" width="500" height="66" rx="12" fill="#182235" stroke="#273449" stroke-width="1"/>
+    <rect x="166" y="248" width="38" height="38" rx="8" fill="#7567F8" fill-opacity="0.15" stroke="#7567F8" stroke-width="1"/>
+    <text x="180" y="272" fill="#7567F8" font-family="system-ui, sans-serif" font-size="14" font-weight="800">A</text>
+    <text x="216" y="261" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Apex Software Solutions</text>
+    <text x="216" y="278" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11">Lucknow, UP · Software Companies</text>
+    <!-- Verified Badge -->
+    <rect x="420" y="254" width="92" height="24" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+    <text x="434" y="270" fill="#10B981" font-family="system-ui, sans-serif" font-size="10" font-weight="700">95% QUALIFIED</text>
+    <rect x="522" y="254" width="112" height="24" rx="6" fill="#7567F8" fill-opacity="0.12"/>
+    <text x="532" y="270" fill="#7567F8" font-family="monospace" font-size="10">contact@apex.in</text>
+
+    <!-- Discovered Lead Item 2 -->
+    <rect x="150" y="312" width="500" height="66" rx="12" fill="#182235" stroke="#273449" stroke-width="1"/>
+    <rect x="166" y="326" width="38" height="38" rx="8" fill="#06B6D4" fill-opacity="0.15" stroke="#06B6D4" stroke-width="1"/>
+    <text x="180" y="350" fill="#06B6D4" font-family="system-ui, sans-serif" font-size="14" font-weight="800">C</text>
+    <text x="216" y="339" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="700">CloudCraft Technologies</text>
+    <text x="216" y="356" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11">Lucknow, UP · IT Services · Anita Sharma (CEO)</text>
+    <rect x="420" y="332" width="92" height="24" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+    <text x="434" y="348" fill="#10B981" font-family="system-ui, sans-serif" font-size="10" font-weight="700">90% QUALIFIED</text>
+    <rect x="522" y="332" width="112" height="24" rx="6" fill="#06B6D4" fill-opacity="0.12"/>
+    <text x="534" y="348" fill="#06B6D4" font-family="monospace" font-size="10">info@cloudcraft.io</text>
+
+    <!-- Discovered Lead Item 3 -->
+    <rect x="150" y="390" width="500" height="66" rx="12" fill="#182235" stroke="#273449" stroke-width="1"/>
+    <rect x="166" y="404" width="38" height="38" rx="8" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1"/>
+    <text x="180" y="428" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="14" font-weight="800">N</text>
+    <text x="216" y="417" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Nexis Digital Labs</text>
+    <text x="216" y="434" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11">Lucknow, UP · Startups · Vikram Seth (Founder)</text>
+    <rect x="420" y="410" width="92" height="24" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+    <text x="434" y="426" fill="#10B981" font-family="system-ui, sans-serif" font-size="10" font-weight="700">85% QUALIFIED</text>
+    <rect x="522" y="410" width="112" height="24" rx="6" fill="#F59E0B" fill-opacity="0.12"/>
+    <text x="532" y="426" fill="#F59E0B" font-family="monospace" font-size="10">vikram@nexis.co</text>
+  </g>
+
+  <!-- Floating Metric Accent Badges -->
+  <g filter="url(#softShadow)">
+    <rect x="60" y="270" width="150" height="64" rx="14" fill="#111827" stroke="#273449" stroke-width="1.5"/>
+    <text x="76" y="293" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">DISCOVERED</text>
+    <text x="76" y="318" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="20" font-weight="900">1,248 leads</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="610" y="200" width="140" height="64" rx="14" fill="#111827" stroke="#273449" stroke-width="1.5"/>
+    <text x="626" y="223" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">ACCURACY</text>
+    <text x="626" y="248" fill="#10B981" font-family="system-ui, sans-serif" font-size="20" font-weight="900">100% Real</text>
+  </g>
+</svg>
+

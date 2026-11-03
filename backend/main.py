@@ -17,6 +17,7 @@ from services.job_queue import (
 )
 from services.ai_service import AIService
 from services.outreach_service import OutreachService
+from services.analytics_service import AnalyticsService
 
 # Initialize SQLite database schema
 init_db()
@@ -298,6 +299,28 @@ def update_lead_notes(lead_id: str, payload: LeadNotesUpdate, db: Session = Depe
         lead.tags = payload.tags
     db.commit()
     return {"id": lead.id, "notes": lead.notes, "tags": lead.tags}
+
+# --- 3. ANALYTICS & SEARCH HISTORY EXTENSIONS ---
+
+@app.get("/api/v1/analytics/overview")
+def get_analytics_overview(db: Session = Depends(get_db)):
+    """Returns aggregated summary metrics across saved leads and jobs."""
+    return AnalyticsService.get_overview_metrics(db)
+
+@app.get("/api/v1/analytics/leads-by-industry")
+def get_analytics_industry(db: Session = Depends(get_db)):
+    """Returns distribution of leads grouped by industry vertical."""
+    return AnalyticsService.get_leads_by_category(db)
+
+@app.get("/api/v1/analytics/leads-by-location")
+def get_analytics_location(db: Session = Depends(get_db)):
+    """Returns distribution of leads grouped by city location."""
+    return AnalyticsService.get_leads_by_city(db)
+
+@app.get("/api/v1/search-history")
+def get_search_history(limit: int = Query(20, ge=1, le=100), db: Session = Depends(get_db)):
+    """Returns historical research and prospecting queries."""
+    return AnalyticsService.get_search_history(db, limit=limit)
 
 
 if __name__ == "__main__":

@@ -1,78 +1,93 @@
-# Scoutly AI — B2B Research & Lead Intelligence
+# Scoutly AI — B2B Research & Lead Intelligence SaaS Platform
 
-> **"Discover businesses. Research smarter. Find better prospects."**
-
-Scoutly AI is a B2B research workspace and automated lead intelligence platform that extracts verified commercial listings, enriches them with public executive contact details, and provides grounded AI research assistance.
-
----
-
-## 🚀 Key Features
-
-- **Grounded AI Prompt Parser:** Convert plain-English prompts into structured, validated search queries mapped strictly to industry taxonomy.
-- **Automated Discovery Engine:** Headless Selenium automation extracting business names, phone numbers, addresses, and websites.
-- **Deep Website Enrichment:** Crawls `/contact`, `/about`, and `/team` pages to detect verified corporate emails and decision-maker names (Founders, CEOs, Directors).
-- **Explainable Lead Scoring:** 100-point transparent qualification score based on domain verification, reachable telephone line, public email, and identified decision maker.
-- **Durable Persistence:** SQLite/SQLAlchemy models store research jobs, progress logs, deduplicated leads, and notes across server restarts.
-- **Safe Export Engine:** Automated Times New Roman corporate Excel spreadsheets and formula-injection-safe CSV downloads.
-- **DevSecOps & SSRF Protection:** Outbound website crawler blocks private RFC1918 subnets, loopbacks, and cloud metadata endpoints (`169.254.169.254`).
-- **Minimalist SaaS Design:** Responsive light and dark mode interface built with React 18, Tailwind CSS, and Lucide icons.
+> **"Find the Right Businesses. Discover Better Opportunities."**  
+> An autonomous, evidence-grounded B2B lead intelligence workspace combining conversational query synthesis with deep web contact discovery and explainable prospect qualification.
 
 ---
 
-## 🛠️ Tech Stack
+## 📸 Platform Previews & Visuals
 
-- **Backend:** Python 3.11+, FastAPI, Uvicorn, Selenium, Requests, BeautifulSoup4, SQLAlchemy, Pydantic, OpenPyXL, Pandas, Pytest.
-- **Frontend:** React 18, Vite 5, TailwindCSS 3, Lucide React.
-- **Storage:** SQLite (zero-config local persistence; PostgreSQL compatible).
-- **Deployment:** Docker & Docker Compose.
+### Obsidian Intelligence Interface (Design System generated via Stitch)
+![Scoutly AI Desktop Preview](frontend/public/illustrations/stitch-hero-preview.png)
+
+### Autonomous Prospecting Workflow
+![Workflow Process Diagram](frontend/public/illustrations/workflow-diagram.svg)
 
 ---
 
-## 🏁 Quickstart
+## 🌟 What is Scoutly AI?
 
-### Prerequisites
+Scoutly AI transforms manual sales prospecting into an intelligent, autonomous pipeline:
+1. **Conversational Intent Grounding:** Write natural-language queries (e.g. *"Find independent automotive service businesses in Lucknow"*); our deterministic AI parser maps it directly to Master Industry Verticals without hallucinated categories.
+2. **Autonomous Web Discovery:** Headless Selenium automation extracts live commercial listings, physical addresses, phone lines, and corporate websites.
+3. **Deep Web Contact Enrichment:** Crawls `/contact`, `/about`, and `/team` sub-pages to uncover verified business emails and executive leadership names (Founders, CEOs, Directors).
+4. **Transparent Lead Scoring:** 100-point explainability score breaking down evidence for domain authority, active phone, corporate email, and identified decision maker.
+5. **Durable Persistence:** ACID-compliant SQLite / SQLAlchemy store keeping your leads, notes, and search history safe across server restarts.
+6. **Built-in Outreach Assistant:** 1-click tailored cold email and LinkedIn pitch generator (Partnership, Sales, and Introduction styles).
+7. **Artisanal SaaS Architecture:** Clean, responsive multi-page application (Home, About, Services, How It Works, Workspace Hub, and Market Intelligence).
+
+---
+
+## 🛠️ Complete Technology Stack
+
+- **Frontend:** React 18, Vite 5, TailwindCSS 3 (Obsidian Dark `#090D18` & Warm Off-White `#F8FAFC`), Lucide React, Dynamic Favicon Resolution.
+- **Design System:** Obsidian Intelligence (Generated via Google Stitch MCP).
+- **Backend API:** FastAPI, Uvicorn, Pydantic, SQLAlchemy 2.0+, BeautifulSoup4, Requests.
+- **Automation Core:** Selenium WebDriver, Chrome Headless Engine, OpenPyXL (Times New Roman corporate styling), Pandas.
+- **Security & DevSecOps:** Custom SSRF IP verification layer (blocking RFC1918, loopbacks, and `169.254.169.254`), CWE-1236 spreadsheet formula injection defense.
+- **Testing:** Pytest automated test suite (25 test cases).
+- **Containerization:** Multi-stage Dockerfiles and Docker Compose.
+
+---
+
+## 🚀 Quickstart & Setup Guide
+
+### 1. Prerequisites
 - Python 3.10+
-- Node.js 18+ & npm
-- Google Chrome installed (for Selenium automation)
+- Node.js 18+ and npm
+- Google Chrome browser (for headless extraction engine)
 
-### 1. Run Backend
+### 2. Backend Engine Setup
 ```bash
 cd backend
 pip install -r requirements.txt
 python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
-- API Docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- Health Check: [http://127.0.0.1:8000/api/health](http://127.0.0.1:8000/api/health)
+- API Health Endpoint: [http://127.0.0.1:8000/api/health](http://127.0.0.1:8000/api/health)
+- Interactive API Documentation (Swagger): [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-### 2. Run Frontend
+### 3. Frontend Web Application Setup
 ```bash
 cd frontend
 npm install
 npm run dev -- --host 127.0.0.1 --port 5173
 ```
-- Open [http://127.0.0.1:5173](http://127.0.0.1:5173) in your browser.
+- Open the application in your browser at: **[http://127.0.0.1:5173](http://127.0.0.1:5173)**
 
 ---
 
-## 🧪 Testing
+## 🧪 Automated Testing
 
-Execute the backend test suite:
+Run the comprehensive pytest test suite verifying API contracts, SSRF security, sanitization, and outreach generators:
 ```bash
 cd backend
 python -m pytest tests -v
 ```
-All 19 test cases verify:
-- Master taxonomy & query generation
-- API contract compliance (legacy & extended)
-- Formula injection protection (CSV/Excel)
-- SSRF security filters (blocking private/metadata IPs)
-- Grounded AI prompt parsing and explainable scoring
+
+### Verified Test Suite Breakdown (25/25 Tests Passing):
+- `tests/test_taxonomy.py`: Validates 11 Master Taxonomy verticals and query generation.
+- `tests/test_api_contract.py`: Verifies legacy and extended endpoints.
+- `tests/test_sanitization.py`: Formula injection defense (`=`, `+`, `-`, `@`, `\t`, `\r`).
+- `tests/test_security_ssrf.py`: Outbound request IP filtering against private/cloud metadata IPs.
+- `tests/test_ai_service.py`: Grounded prompt parsing, lead qualification scoring, and summarization.
+- `tests/test_outreach.py`: Sales & partnership outreach pitch generation.
+- `tests/test_analytics.py`: Aggregate database query calculations for categories, cities, and jobs.
 
 ---
 
 ## 🐳 Docker Deployment
 
-To run both services in Docker containers:
+Run the complete multi-service stack with a single command:
 ```bash
 docker-compose up -d --build
 ```
@@ -80,17 +95,16 @@ Access the application at [http://localhost:5173](http://localhost:5173).
 
 ---
 
-## 📚 Complete Documentation Suite
+## 📚 Complete Engineering Documentation
 
-All detailed engineering documentation is available in the [`docs/`](./docs) directory:
-- [Current State Audit](docs/CURRENT_STATE_AUDIT.md)
+Detailed architecture specifications, security threat models, and operational plans are documented in [`docs/`](./docs):
 - [Product Requirements Document (PRD)](docs/PRD.md)
 - [Technical Requirements Document (TRD)](docs/TRD.md)
-- [System Design Document](docs/SYSTEM_DESIGN.md)
-- [Architecture Guide](docs/ARCHITECTURE.md)
-- [API Specification](docs/API.md)
-- [Testing Strategy & Reports](docs/TESTING.md)
-- [Deployment Guide](docs/DEPLOYMENT.md)
-- [Security & Compliance](docs/SECURITY.md)
+- [System Design & Sequence Flows](docs/SYSTEM_DESIGN.md)
+- [Architecture & Adapter Hierarchy](docs/ARCHITECTURE.md)
+- [API Specification Contract](docs/API.md)
+- [Testing Strategy & Coverage Matrix](docs/TESTING.md)
+- [Deployment, Backup & Rollback Guide](docs/DEPLOYMENT.md)
+- [Security, SSRF & Compliance Controls](docs/SECURITY.md)
+- [Current State Audit](docs/CURRENT_STATE_AUDIT.md)
 - [Implementation Plan](docs/IMPLEMENTATION_PLAN.md)
-
