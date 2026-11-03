@@ -1,7 +1,11 @@
-﻿node_modules
+node_modules
 .venv
 __pycache__
 *.pyc
 scoutly.db
 *.log
 .git
+.vite
+frontend/.vite
+dist
+*.local
